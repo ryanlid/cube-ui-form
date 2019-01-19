@@ -1,4 +1,4 @@
-# data-entry
+# cube-ui-form
 
 ## Project setup
 ```

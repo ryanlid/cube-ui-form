@@ -1,6 +1,12 @@
 <template>
   <div>
-    <cube-form :model="model" :schema="schema" :immediate-validate="false" :options="options" @validate="validateHandler" @submit="submitHandler">
+    <cube-form
+    :model="model"
+    :schema="schema"
+    :immediate-validate="false"
+    :options="options"
+    @validate="validateHandler"
+    @submit="submitHandler">
     </cube-form>
   </div>
 </template>
@@ -36,8 +42,8 @@ export default {
               label: '头像',
               props: {
                 action: {
-                  target: '/img/uploadImg',
-                  fileName: 'imgFile',
+                  target: 'https://upload.oonnnoo.com/upload',
+                  fileName: 'upfile',
                   data: {
                     token: 'token'
                   },
@@ -62,32 +68,6 @@ export default {
                   console.log('file-submitted-file', file)
                 }
               },
-              // rules: {
-              //   uploaded: (val, config) => {
-              //     return Promise.all(val.map((file, i) => {
-              //       return new Promise((resolve, reject) => {
-              //         console.log(file)
-              //         uploadFile(
-
-              //         )
-              //         if (file.uploadedUrl) {
-              //           return resolve()
-              //         }
-              //         // // fake request
-              //         // setTimeout(() => {
-              //         //   if (i % 2) {
-              //         //     reject(new Error())
-              //         //   } else {
-              //         //     file.uploadedUrl = 'uploaded/url'
-              //         //     resolve()
-              //         //   }
-              //         // }, 1000)
-              //       })
-              //     })).then(() => {
-              //       return true
-              //     })
-              //   }
-              // },
               messages: {
                 uploaded: '上传失败'
               }
